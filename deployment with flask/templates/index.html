@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Prediction Result</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 50px;
+    }
+
+    .injured {
+      color: red;
+    }
+
+    .not-injured {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Prediction Result</h1>
+  <h1 class={{class1}}>You have {{ result }}</h1>
+
+  <h2 class={{confidence_percent}}>with confidence percent = {{ confidence_percent }}</h2>
+</body>
+
+</html>
+inside index.html:
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Brain Tumor Detection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    form {
+      margin-top: 50px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Brain Tumor Detection</h1>
+  <form action="/predict" method="POST" enctype="multipart/form-data">
+    <label for="image">Select an image:</label>
+    <input type="file" id="image" name="image">
+    <input type="submit" value="Predict">
+  </form>
+</body>
+
+</html>
+inside error.html put this:
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Error</title>
+</head>
+
+<body>
+  <h1>Error:</h1>
+  <p>{{ message }}</p>
+</body>
+
+</html>
